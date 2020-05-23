@@ -2,7 +2,7 @@ const postsContainer = document.getElementById("posts-container");
 const loading = document.querySelector(".loader");
 const filter = document.getElementById("filter");
 
-let limit = 3;
+let limit = 5;
 let page = 1; // this is the default
 
 // Fetch posts from API
@@ -43,6 +43,11 @@ function showLoading() {
 
   setTimeout(() => {
     loading.classList.remove("show");
+
+    setTimeout(() => {
+      page++;
+      showPosts();
+    }, 300);
   }, 1000);
 }
 
